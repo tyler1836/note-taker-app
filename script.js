@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     console.log(__dirname)
     res.sendFile(path.join(__dirname, './Develop/public/index.html'))
 })
-
+//get notes
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './Develop/public/notes.html'))
 })
