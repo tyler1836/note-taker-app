@@ -1,4 +1,3 @@
-# Note Taker Starter Code
 ## Heroku app for taking notes
 * app for taking notes
 * enter the note taking app
