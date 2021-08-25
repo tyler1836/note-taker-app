@@ -67,6 +67,7 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
+  
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
@@ -75,6 +76,7 @@ const handleNoteSave = () => {
     getAndRenderNotes();
     renderActiveNote();
   });
+  location.reload();
 };
 
 // Delete the clicked note
@@ -170,8 +172,9 @@ const renderNoteList = async (notes) => {
   }
 };
 
+
 // Gets notes from the db and renders them to the sidebar
-const getAndRenderNotes = () => getNotes().then(renderNoteList);
+const getAndRenderNotes = () => getNotes().then(renderNoteList,);
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
@@ -180,4 +183,5 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
+// saveNoteBtn.location.reload();
 getAndRenderNotes();

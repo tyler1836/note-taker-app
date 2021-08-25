@@ -31,6 +31,13 @@ app.post('/api/notes', (req, res) => {
     parsedData.push(note)
     fs.writeFileSync(path.resolve(__dirname, './Develop/db/db.json'), JSON.stringify(parsedData))
     console.log(parsedData)
+});
+
+app.delete('/api/notes/:id', (req, res)=> {
+    let dataBase = JSON.parse(fs.readFileSync(path.resolve(__dirname, './Develop/db/db.json')), 'utf8');
+    for (let i = 0; i < dataBase.length; i++) {
+        let id = dataBase[i].id 
+    } 
 })
 app.listen(PORT, () => {
     console.log(`api server on port ${PORT}`)
